@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    private Rigidbody2D corpo;
+    // Start is called before the first frame update
+    void Start(){
+        corpo = GetComponent<Rigidbody2D>();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 velocidade = new Vector2(Input.GetAxis("Horizontal") * 1200.0f * Time.deltaTime, 0);
+        corpo.velocity = velocidade;
+    }
+}
